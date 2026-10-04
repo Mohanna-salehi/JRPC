@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "example.com/jrpc/internal/proto;proto";
+
+service Calculate {
+  rpc Sum (Request) returns (Response);
+  rpc Minus (Request) returns (Response);
+}
+
+message Request {
+  double a = 1;
+  double b = 2;
+}
+
+message Response {
+  double value = 1;
+}
+
